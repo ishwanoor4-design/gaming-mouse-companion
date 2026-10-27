@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gaming Mouse Companion</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="app">
+
+    <header class="header">
+      <div class="brand">
+        <div class="brand-icon" aria-hidden="true">G</div>
+        <div>
+          <h1>Gaming Mouse</h1>
+          <p class="subtitle">COMPANION</p>
+        </div>
+      </div>
+      <span class="status">READY</span>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">YOUR AIM. YOUR CONTROL.</p>
+      <h2>Find your <span>sweet spot.</span></h2>
+      <p>Calculate your eDPI and fine-tune your gaming setup.</p>
+    </section>
+
+    <section class="calculator panel">
+      <div class="section-heading">
+        <h2>eDPI Calculator</h2>
+        <span class="live-label">LIVE CALCULATION</span>
+      </div>
+
+      <div class="field">
+        <label for="dpi">Mouse DPI</label>
+        <input
+          id="dpi"
+          name="dpi"
+          type="number"
+          min="1"
+          max="100000"
+          step="1"
+          value="800"
+          inputmode="numeric"
+        >
+        <p class="hint">Your mouse's configured DPI</p>
+      </div>
+
+      <div class="field">
+        <label for="sensitivity">In-game sensitivity</label>
+        <input
+          id="sensitivity"
+          name="sensitivity"
+          type="number"
+          min="0.001"
+          max="1000"
+          step="any"
+          value="0.5"
+          inputmode="decimal"
+        >
+        <p class="hint">Your sensitivity setting in the game</p>
+      </div>
+
+      <div class="result" aria-live="polite">
+        <p class="result-label">YOUR eDPI</p>
+        <output id="edpi-result" for="dpi sensitivity">400</output>
+        <p id="result-message">800 DPI × 0.5 sensitivity</p>
+      </div>
+
+      <p id="error-message" class="error" role="alert" hidden></p>
+
+      <p class="disclaimer">
+        eDPI is useful for comparing settings within the same game.
+        Different games may use different sensitivity scales.
+      </p>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <h2>DPI Quick Guide</h2>
+        <span class="live-label">3 PRESETS</span>
+      </div>
+
+      <div class="presets">
+        <button class="preset" type="button" data-dpi="400">
+          <strong>400</strong>
+          <span>DPI</span>
+        </button>
+
+        <button class="preset active" type="button" data-dpi="800">
+          <strong>800</strong>
+          <span>DPI</span>
+        </button>
+
+        <button class="preset" type="button" data-dpi="1600">
+          <strong>1600</strong>
+          <span>DPI</span>
+        </button>
+      </div>
+
+      <p class="hint">
+        Select a preset to use it in the calculator.
+        No single DPI is best for every player.
+      </p>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <h2>Mouse Troubleshooting</h2>
+      </div>
+
+      <details>
+        <summary>Mouse feels too fast?</summary>
+        <p>
+          Try lowering your in-game sensitivity first.
+          Change one setting at a time and test it in-game.
+        </p>
+      </details>
+
+      <details>
+        <summary>Mouse feels too slow?</summary>
+        <p>
+          Try increasing sensitivity gradually, or test a
+          different DPI setting that suits your playing style.
+        </p>
+      </details>
+
+      <details>
+        <summary>Mouse movement feels inconsistent?</summary>
+        <p>
+          Check your mouse surface, battery or cable, sensor
+          cleanliness, game settings, and any active acceleration.
+        </p>
+      </details>
+    </section>
+
+    <footer class="footer">
+      <p>Built for gamers who care about precision.</p>
+      <a
+        id="website-link"
+        href="https://mousedpianalyzertool.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Open Mouse DPI Analyzer ↗
+      </a>
+    </footer>
+
+  </main>
+
+  <script src="popup.js"></script>
+</body>
+</html>
